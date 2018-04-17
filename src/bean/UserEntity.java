@@ -9,7 +9,6 @@ import java.util.Objects;
  * @author Chris
  * 2018/4/16 17:38
  * @see bean
- * @deprecated
  */
 @Entity
 @Table(name = "user", schema = "chatroom", catalog = "")
@@ -22,6 +21,7 @@ public class UserEntity {
     private String email;
     private String address;
     private String remark;
+    private String password;
 
     @Basic
     @Column(name = "name")
@@ -119,5 +119,15 @@ public class UserEntity {
 
     public void setRemark(String remark) {
         this.remark = remark;
+    }
+
+    @Basic
+    @Column(name = "password")
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

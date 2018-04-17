@@ -1,5 +1,6 @@
 package test;
 
+import action.DbAction;
 import bean.UserEntity;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
@@ -10,7 +11,6 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
  * @author Chris
  * 2018/4/16 15:42
  * @see test
- * @deprecated
  */
 public class Test {
 
@@ -18,10 +18,9 @@ public class Test {
         ApplicationContext ac = new FileSystemXmlApplicationContext("web/WEB-INF/applicationContext.xml");
         TestService ts = (TestService) ac.getBean("testService");
         ts.hello();
-        UserTest ail = (UserTest)ac.getBean("user");
+        DbAction ail = (DbAction)ac.getBean("dbAction");
         UserEntity al = new UserEntity();
-        al.setUserId("dsf");
-        al.setName("kaka");
+        al.setName("kaka2");
         al.setPhone("123456123");
         ail.add(al);
     }

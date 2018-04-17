@@ -9,7 +9,6 @@ import java.util.Objects;
  * @author Chris
  * 2018/4/17 10:34
  * @see bean
- * @deprecated
  */
 @Entity
 @Table(name = "role", schema = "chatroom", catalog = "")

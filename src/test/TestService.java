@@ -6,7 +6,6 @@ package test;
  * @author Chris
  * 2018/4/16 15:40
  * @see test
- * @deprecated
  */
 public class TestService {
     private String name;

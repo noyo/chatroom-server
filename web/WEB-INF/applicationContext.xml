@@ -38,11 +38,8 @@
         </property>
     </bean>
 
-    <!--hibernate测试加入-->
-    <bean id="user" class="test.UserTest">
+    <!-- hibernate -->
+    <bean id="dbAction" class="action.DbActionImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
-    </bean>
-    <bean id="useraction" class="test.UserAction">
-        <property name="user" ref="user"/>
     </bean>
 </beans>

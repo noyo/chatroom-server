@@ -12,14 +12,15 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>-->
 
-    <!-- 测试 -->
+
+    <!-- login -->
     <servlet>
-        <servlet-name>TestServlet</servlet-name>
-        <servlet-class>test.TestServlet</servlet-class>
+        <servlet-name>register</servlet-name>
+        <servlet-class>login.servlet.RegisterServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>TestServlet</servlet-name>
-        <url-pattern>/test/hello</url-pattern>
+        <servlet-name>register</servlet-name>
+        <url-pattern>/register</url-pattern>
     </servlet-mapping>
     
 </web-app>
