@@ -28,6 +28,12 @@
         <property name="annotatedClasses">
             <list>
                 <value>bean.UserEntity</value>
+                <value>bean.FriendshipEntity</value>
+                <value>bean.GroupEntity</value>
+                <value>bean.MessageEntity</value>
+                <value>bean.MessageTypeEntity</value>
+                <value>bean.RoleEntity</value>
+                <value>bean.UserStatusEntity</value>
             </list>
         </property>
     </bean>

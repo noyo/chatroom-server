@@ -14,22 +14,14 @@ import java.util.Objects;
 @Entity
 @Table(name = "user", schema = "chatroom", catalog = "")
 public class UserEntity {
-    private String userId;
     private String name;
     private String phone;
     private String nickname;
     private Byte sex;
     private int id;
-
-    @Basic
-    @Column(name = "user_id")
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
+    private String email;
+    private String address;
+    private String remark;
 
     @Basic
     @Column(name = "name")
@@ -87,7 +79,6 @@ public class UserEntity {
         if (o == null || getClass() != o.getClass()) return false;
         UserEntity that = (UserEntity) o;
         return id == that.id &&
-                Objects.equals(userId, that.userId) &&
                 Objects.equals(name, that.name) &&
                 Objects.equals(phone, that.phone) &&
                 Objects.equals(nickname, that.nickname) &&
@@ -97,6 +88,36 @@ public class UserEntity {
     @Override
     public int hashCode() {
 
-        return Objects.hash(userId, name, phone, nickname, sex, id);
+        return Objects.hash(name, phone, nickname, sex, id);
+    }
+
+    @Basic
+    @Column(name = "email")
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Basic
+    @Column(name = "address")
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    @Basic
+    @Column(name = "remark")
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
     }
 }
