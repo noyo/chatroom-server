@@ -1,0 +1,7 @@
+/.git
+/.idea
+/lib
+/out
+/web/WEB-INF/classes
+/web/WEB-INF/lib
+/chatroom-server.iml
