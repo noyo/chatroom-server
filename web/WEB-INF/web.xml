@@ -16,7 +16,7 @@
     <!-- login -->
     <servlet>
         <servlet-name>register</servlet-name>
-        <servlet-class>login.servlet.RegisterServlet</servlet-class>
+        <servlet-class>server.login.servlet.RegisterServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>register</servlet-name>

@@ -1,4 +1,4 @@
-package common.helper;
+package server.helper;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
@@ -8,7 +8,7 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
  *
  * @author Chris
  * 2018/4/17 15:25
- * @see common.helper
+ * @see server.helper
  */
 public class SpringHelper {
 

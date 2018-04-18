@@ -27,19 +27,19 @@
         </property>
         <property name="annotatedClasses">
             <list>
-                <value>bean.UserEntity</value>
-                <value>bean.FriendshipEntity</value>
-                <value>bean.GroupEntity</value>
-                <value>bean.MessageEntity</value>
-                <value>bean.MessageTypeEntity</value>
-                <value>bean.RoleEntity</value>
-                <value>bean.UserStatusEntity</value>
+                <value>server.bean.UserEntity</value>
+                <value>server.bean.FriendshipEntity</value>
+                <value>server.bean.GroupEntity</value>
+                <value>server.bean.MessageEntity</value>
+                <value>server.bean.MessageTypeEntity</value>
+                <value>server.bean.RoleEntity</value>
+                <value>server.bean.UserStatusEntity</value>
             </list>
         </property>
     </bean>
 
     <!-- hibernate -->
-    <bean id="dbAction" class="action.DbActionImpl">
+    <bean id="dbAction" class="server.action.DbActionImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 </beans>

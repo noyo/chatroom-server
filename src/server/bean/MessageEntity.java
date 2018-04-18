@@ -1,4 +1,4 @@
-package bean;
+package server.bean;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -9,7 +9,7 @@ import java.util.Objects;
  *
  * @author Chris
  * 2018/4/17 10:34
- * @see bean
+ * @see server.bean
  */
 @Entity
 @Table(name = "message", schema = "chatroom", catalog = "")

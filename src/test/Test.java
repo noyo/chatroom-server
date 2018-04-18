@@ -1,9 +1,11 @@
 package test;
 
-import action.DbAction;
-import bean.UserEntity;
+import org.apache.logging.log4j.LogManager;
+import server.action.DbAction;
+import server.bean.UserEntity;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
+import server.login.servlet.RegisterServlet;
 
 /**
  * Copyright © 2018 Chris. All rights reserved.

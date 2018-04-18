@@ -1,11 +1,11 @@
-package action;
+package server.action;
 
 /**
  * Copyright © 2018 Chris. All rights reserved.
  *
  * @author Chris
  * 2018/4/17 15:47
- * @see action
+ * @see server.action
  */
 public interface DbAction {
     /**

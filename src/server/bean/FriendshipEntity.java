@@ -1,4 +1,4 @@
-package bean;
+package server.bean;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -8,13 +8,13 @@ import java.util.Objects;
  *
  * @author Chris
  * 2018/4/17 10:34
- * @see bean
+ * @see server.bean
  */
 @Entity
-@Table(name = "role", schema = "chatroom", catalog = "")
-public class RoleEntity {
+@Table(name = "friendship", schema = "chatroom", catalog = "")
+public class FriendshipEntity {
     private int id;
-    private String name;
+    private Long intimate;
 
     @Id
     @Column(name = "id")
@@ -27,27 +27,27 @@ public class RoleEntity {
     }
 
     @Basic
-    @Column(name = "name")
-    public String getName() {
-        return name;
+    @Column(name = "intimate")
+    public Long getIntimate() {
+        return intimate;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setIntimate(Long intimate) {
+        this.intimate = intimate;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        RoleEntity that = (RoleEntity) o;
+        FriendshipEntity that = (FriendshipEntity) o;
         return id == that.id &&
-                Objects.equals(name, that.name);
+                Objects.equals(intimate, that.intimate);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, name);
+        return Objects.hash(id, intimate);
     }
 }

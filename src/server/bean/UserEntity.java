@@ -1,4 +1,4 @@
-package bean;
+package server.bean;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -8,7 +8,7 @@ import java.util.Objects;
  *
  * @author Chris
  * 2018/4/16 17:38
- * @see bean
+ * @see server.bean
  */
 @Entity
 @Table(name = "user", schema = "chatroom", catalog = "")

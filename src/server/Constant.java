@@ -1,11 +1,11 @@
-package common;
+package server;
 
 /**
  * Copyright © 2018 Chris. All rights reserved.
  *
  * @author Chris
  * 2018/4/17 14:56
- * @see common
+ * @see server
  */
 public class Constant {
     /* user */
@@ -15,5 +15,6 @@ public class Constant {
     /* action */
     public static final String DB_ACTION = "dbAction";
 
+    /* handler */
 
 }

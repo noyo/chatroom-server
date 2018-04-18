@@ -1,12 +1,5 @@
 package test;
 
-import bean.UserEntity;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-
 /**
  * Copyright © 2018 Chris. All rights reserved.
  *

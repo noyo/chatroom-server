@@ -1,11 +1,11 @@
-package login.servlet;
+package server.login.servlet;
 
-import action.DbAction;
-import bean.ResponseEntity;
-import bean.UserEntity;
-import com.google.gson.Gson;
-import common.Constant;
-import common.helper.SpringHelper;
+import server.action.DbAction;
+import server.bean.ResponseEntity;
+import server.bean.UserEntity;
+import server.Constant;
+import server.helper.GsonHelper;
+import server.helper.SpringHelper;
 import common.utils.StringUtils;
 
 import javax.servlet.ServletException;
@@ -25,14 +25,15 @@ public class RegisterServlet extends HttpServlet {
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, "用户名密码不能为空");
             return;
         }
+        //保存注册信息到数据库
         UserEntity entity = new UserEntity();
         entity.setName(name);
         entity.setPassword(pwd);
         ((DbAction) SpringHelper.getInstance().getBean(Constant.DB_ACTION)).add(entity);
-        ResponseEntity result = new ResponseEntity();
-        result.setCode(HttpServletResponse.SC_OK);
-        result.setContent("注册成功");
-        response.getWriter().print((new Gson()).toJson(result));
+        //返回信息到客户端
+        ResponseEntity result = new ResponseEntity(HttpServletResponse.SC_OK, "注册成功", null);
+        response.setHeader("content-type", "text/plain;charset=utf-8");
+        response.getWriter().print(GsonHelper.getInstance().getGson().toJson(result));
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

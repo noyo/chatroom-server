@@ -1,4 +1,4 @@
-package action;
+package server.action;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
  *
  * @author Chris
  * 2018/4/17 15:48
- * @see action
+ * @see server.action
  */
 public class DbActionImpl implements DbAction {
 
