@@ -1,0 +1,10 @@
+package:
+    common: 公用
+    server.action: 数据库操作相关
+    server.bean: 数据对象
+    server.helper: 帮助类
+    server.utils: 工具类
+    server.login: 登录接口相关
+
+class:
+    server.Constant: 常量数据
