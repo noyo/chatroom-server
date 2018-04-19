@@ -14,7 +14,7 @@ public class SpringHelper {
 
     private static final Byte[] LOCK = new Byte[0];
 
-    public static SpringHelper mInstance;
+    private static SpringHelper mInstance;
     private ApplicationContext mContext;
 
     private SpringHelper() {

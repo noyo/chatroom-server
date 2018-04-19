@@ -1,5 +1,7 @@
 package server.action;
 
+import java.util.Map;
+
 /**
  * Copyright © 2018 Chris. All rights reserved.
  *
@@ -11,9 +13,16 @@ public interface DbAction {
     /**
      * 添加数据对象到数据库
      *
-     * @param t 数据对象
+     * @param obj 数据对象
      */
-    void add(Object t);
+    void add(Object obj);
 
-//    void delete();
+//    void delete(Object obj);
+
+    /**
+     * 通过hql查询数据库
+     *
+     * @param hql
+     */
+    Object findByHql(String hql, Map<String, Object> params);
 }
