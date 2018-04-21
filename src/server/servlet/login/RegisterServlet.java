@@ -1,4 +1,4 @@
-package server.login.servlet;
+package server.servlet.login;
 
 import server.action.DbAction;
 import server.bean.ResponseEntity;
@@ -20,7 +20,7 @@ import java.util.Map;
 @WebServlet(name = "RegisterServlet")
 public class RegisterServlet extends HttpServlet {
 
-    private DbAction action;
+    private DbAction action = (DbAction) SpringHelper.getInstance().getBean(Constant.DB_ACTION);
     private final String REGISTER_HQL = "from UserEntity where name = :" + Constant.USER_NAME;
 
     /* 判断待注册用户是否已存在 */
@@ -48,9 +48,6 @@ public class RegisterServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (null == action) {
-            action = (DbAction) SpringHelper.getInstance().getBean(Constant.DB_ACTION);
-        }
 
         String name = request.getParameter(Constant.USER_NAME);
         String pwd = request.getParameter(Constant.USER_PWD);

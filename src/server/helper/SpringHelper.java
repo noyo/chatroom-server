@@ -3,6 +3,9 @@ package server.helper;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
+import java.io.File;
+import java.io.IOException;
+
 /**
  * Copyright © 2018 Chris. All rights reserved.
  *
@@ -16,9 +19,10 @@ public class SpringHelper {
 
     private static SpringHelper mInstance;
     private ApplicationContext mContext;
+    private final String rootPath = SpringHelper.class.getResource("").getPath().replace("/classes/server/helper", "");
 
     private SpringHelper() {
-        mContext = new FileSystemXmlApplicationContext("E:\\study\\student\\server\\chatroom-server" + "/web/WEB-INF/applicationContext.xml");
+        mContext = new FileSystemXmlApplicationContext(rootPath + "/applicationContext.xml");
     }
 
     public static SpringHelper getInstance() {
