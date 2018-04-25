@@ -1,6 +1,7 @@
 package server.helper;
 
 import com.google.gson.Gson;
+import server.Constant;
 
 /**
  * Copyright © 2018 Chris. All rights reserved.
@@ -10,7 +11,6 @@ import com.google.gson.Gson;
  * @see server.helper
  */
 public class GsonHelper {
-    private static final String TAG = "GsonHelper";
 
     private static GsonHelper mInstance;
 
@@ -22,7 +22,7 @@ public class GsonHelper {
 
     public static GsonHelper getInstance() {
         if (null == mInstance) {
-            synchronized (TAG) {
+            synchronized (Constant.TAG_GSONHELPER) {
                 mInstance = new GsonHelper();
             }
         }

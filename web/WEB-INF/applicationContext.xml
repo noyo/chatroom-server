@@ -34,6 +34,8 @@
                 <value>server.bean.MessageTypeEntity</value>
                 <value>server.bean.RoleEntity</value>
                 <value>server.bean.UserStatusEntity</value>
+                <value>server.bean.FriendshipEntity</value>
+                <value>server.bean.UserEntity</value>
             </list>
         </property>
     </bean>

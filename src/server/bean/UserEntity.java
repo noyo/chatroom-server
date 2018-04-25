@@ -1,6 +1,7 @@
 package server.bean;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.util.Objects;
 
 /**
@@ -22,6 +23,8 @@ public class UserEntity {
     private String address;
     private String remark;
     private String password;
+    private Timestamp createtime;
+    private Timestamp updatetime;
 
     @Basic
     @Column(name = "name")
@@ -129,5 +132,25 @@ public class UserEntity {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Basic
+    @Column(name = "createtime")
+    public Timestamp getCreatetime() {
+        return createtime;
+    }
+
+    public void setCreatetime(Timestamp createtime) {
+        this.createtime = createtime;
+    }
+
+    @Basic
+    @Column(name = "updatetime")
+    public Timestamp getUpdatetime() {
+        return updatetime;
+    }
+
+    public void setUpdatetime(Timestamp updatetime) {
+        this.updatetime = updatetime;
     }
 }

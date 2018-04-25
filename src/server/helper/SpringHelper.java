@@ -2,6 +2,7 @@ package server.helper;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
+import server.Constant;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,8 +16,6 @@ import java.io.IOException;
  */
 public class SpringHelper {
 
-    private static final Byte[] LOCK = new Byte[0];
-
     private static SpringHelper mInstance;
     private ApplicationContext mContext;
     private final String rootPath = SpringHelper.class.getResource("").getPath().replace("/classes/server/helper", "");
@@ -27,7 +26,7 @@ public class SpringHelper {
 
     public static SpringHelper getInstance() {
         if (null == mInstance) {
-            synchronized (LOCK) {
+            synchronized (Constant.TAG_SPRINGHELPER) {
                 mInstance = new SpringHelper();
             }
         }
