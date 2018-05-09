@@ -19,19 +19,15 @@ public class LoginServlet extends BaseServlet<UserEntity> {
 
     private final String LOGIN_HQL = "from UserEntity where name = :" + Constant.USER_NAME;
 
-    private String name;
-    private String password;
-    private UserEntity user;
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        name = request.getParameter(Constant.USER_NAME);
-        password = request.getParameter(Constant.USER_PWD);
+        String name = request.getParameter(Constant.USER_NAME);
+        String password = request.getParameter(Constant.USER_PWD);
         if (StringUtils.isEmpty(name) || StringUtils.isEmpty(password)) {
             response(response, HttpServletResponse.SC_NO_CONTENT, Constant.NAME_PWD_NOTALLOW_NULL, null);
             return;
         }
-        user = find(name);
+        UserEntity user = find(name);
         if (null == user) {
             response(response, HttpServletResponse.SC_NO_CONTENT, Constant.NAME_NOT_FOUND, null);
             return;

@@ -25,4 +25,12 @@ public interface DbAction {
      * @param hql
      */
     Object findByHql(String hql, Map<String, Object> params);
+
+    /**
+     * 数据库表更新
+     *
+     * @param obj 更新实体
+     * @return 更新成功与否
+     */
+    boolean update(Object obj);
 }

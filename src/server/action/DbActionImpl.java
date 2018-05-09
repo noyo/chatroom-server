@@ -27,9 +27,9 @@ public class DbActionImpl implements DbAction {
     @Override
     public void add(Object obj) {
         Session s = sessionFactory.openSession();
-        Transaction tx= s.beginTransaction();
+        Transaction ts= s.beginTransaction();
         s.save(obj);
-        tx.commit();
+        ts.commit();
         s.close();
     }
 
@@ -37,15 +37,27 @@ public class DbActionImpl implements DbAction {
     public Object findByHql(String hql, Map<String, Object> params) {
         Object obj;
         Session s = sessionFactory.openSession();
-        Transaction tx = s.beginTransaction();
+        Transaction ts = s.beginTransaction();
         Query query = s.createQuery(hql);
         for (String key : params.keySet()) {
             query.setParameter(key, params.get(key));
         }
         obj = query.uniqueResult();
-        tx.commit();
+        ts.commit();
         s.close();
         return obj;
+    }
+
+    @Override
+    public boolean update(Object obj) {
+
+        Session s = sessionFactory.openSession();
+        Transaction ts = s.beginTransaction();
+
+        ts.commit();
+        s.close();
+
+        return false;
     }
 
     public void setSessionFactory(SessionFactory sessionFactory) {
